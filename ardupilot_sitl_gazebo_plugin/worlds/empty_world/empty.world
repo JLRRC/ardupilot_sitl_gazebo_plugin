@@ -54,11 +54,13 @@
       <direction>0 0 -1</direction>
     </light>
 
-
     <include>
       <uri>model://ground_plane</uri>
     </include>
 
+    <include>
+      <uri>model://asphalt_plane</uri>
+    </include>
 
 <!--
     <include>
