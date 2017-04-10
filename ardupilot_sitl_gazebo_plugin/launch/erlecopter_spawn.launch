@@ -3,14 +3,12 @@
   <arg name="simRate" default="nan"/>
   <!-- Enable simulation clock -->
   <param name="use_sim_time" type="bool" value="true" />
-
+  <include file="$(find mavros)/launch/apm_sitl.launch"></include>	
 
   <arg name="enable_logging" default="true"/>
   <arg name="enable_ground_truth" default="true"/>
   <arg name="enable_mavlink_interface" default="true"/>
   <arg name="log_file" default="erlecopter"/>
-  <arg name="ns" default="erlecopter"/>
-  <arg name="mavlink_bridge_url" default="udp://localhost:14553@localhost:14560" />
   <arg name="headless" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="world_name" default="$(find ardupilot_sitl_gazebo_plugin)/worlds/empty_world/empty.world"/>
@@ -19,14 +17,7 @@
   <arg name="model" default="$(find ardupilot_sitl_gazebo_plugin)/urdf/erlecopter_base.xacro"/>
   <arg name="tf_prefix" default="$(optenv ROS_NAMESPACE)"/>
   <arg name="debug" default="true"/>
-  <arg name="verbose" default="true"/>
-
-  <include file="$(find mavros)/launch/apm_sitl.launch"></include>	
-    <include file="$(find mavros)/launch/mavlink_bridge.launch">
-    <arg name="mavlink_bridge_url" value="$(arg mavlink_bridge_url)" />
-    <arg name="ns" value="$(arg ns)"/>
-   </include>	
-	
+  <arg name="verbose" default="true"/>	
 	
   <!-- Initial pose for the drone -->
   <arg name="x" default="0.0"/> <!-- [m], positive to the North -->
