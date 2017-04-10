@@ -7,6 +7,7 @@
 
   <arg name="enable_logging" default="true"/>
   <arg name="enable_ground_truth" default="true"/>
+  <arg name="enable_mavlink_interface" default="true"/>
   <arg name="log_file" default="erlecopter"/>
   <arg name="headless" default="false"/>
   <arg name="gui" default="true"/>
@@ -31,6 +32,7 @@
     $(find xacro)/xacro '$(arg model)'
     enable_logging:=$(arg enable_logging)
     enable_ground_truth:=$(arg enable_ground_truth)
+    enable_ground_truth:=$(arg enable_mavlink_interface)					   
     log_file:=$(arg log_file)"
   />
   <param name="tf_prefix" type="string" value="$(arg tf_prefix)" />
